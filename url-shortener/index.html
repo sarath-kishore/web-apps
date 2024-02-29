@@ -1,0 +1,64 @@
+<!-- Latest Copy -->
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no maximum-scale=1">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="stylesheets/css-reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+            <!-- FAV and TOUCH ICONS -->
+        <link rel="shortcut icon" href="../../images/ico/url-shortener.png">
+        <link rel="apple-touch-icon" href="../../images/ico/url-shortener.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script defer src="https://kit.fontawesome.com/25e96da4e3.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js" integrity="sha512-/n/dTQBO8lHzqqgAQvy0ukBQ0qLmGzxKhn8xKrz4cn7XJkZzy+fAtzjnOQd5w55h4k1kUC+8oIe6WmrGUYwODA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+</head>
+
+<body>
+    <div class="container">
+      <div class="search-container">
+        <form id='url-shorten-form'>
+            <input type="url" placeholder="Enter URL to shorten.." id="full-url" required />
+            <div>
+                <input type="text" placeholder="Enter optional keyword" id="keyword"/>
+                <input class="btn" id="search-btn" type="submit" value="Shorten URL">
+            </div>
+        </form>
+      </div>
+      <div id="result" class="hide">
+          <div class="info">
+                <img id='short_url_qr' src="tick3.gif" alt="">
+                 <div>
+                     <h2 id="short_url_text"></h2>
+                         <input type="text" value="" id="short_url" hidden />
+                     <div class="genre">
+                         <div class="duplicateIcon" onclick="copyText()">copy</div>
+                     </div>
+                 </div>
+             </div>
+      </div>
+    </div>
+
+
+
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

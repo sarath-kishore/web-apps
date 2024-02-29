@@ -1,0 +1,408 @@
+:root{
+    --bg: #fdfdfd;
+    /*--fg: #fdfdfd;*/
+    --dark: #0d1b2a;
+    /*--dark: #060d13;*/
+
+    --mincBtnText: #fdfdfd;
+    --fontLight: #fdfdfd;
+    --fontDark: #0d1b2a;
+    --mincAccentYellow: #FFCA40;
+    --mincAccentBlue: #0D1B2A;
+
+    --mainMargin: calc(0.7rem + 10px);
+
+    --btncolor: red;
+
+}
+
+
+ *, *:before, *:after {
+     box-sizing: inherit;
+     position: relative;
+}
+
+
+
+* {
+    /*font-family: 'Poppins', sans-serif;*/
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+word-wrap: break-word;
+hyphens: auto;
+/*text-transform: capitalize;*/
+user-select: none;
+outline: none;
+position: relative;
+font-size: 16px;
+transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+scroll-behavior: smooth;
+}
+
+*:focus, *:active, button:focus, button:active, button{
+    outline: none;
+    user-select: none;
+}
+
+
+h1,h2,h3,h4,h5,h6,p,span,div,a,section,article{
+    margin: 0;
+    padding: 0;
+}
+
+input[type="email"], input[type="password"], input[type="text"], #profile_email, #profile_phone, #exercise_description, textarea{
+    text-transform: none !important;
+    user-select: auto;
+}
+
+body, html {
+    overflow: auto;
+    background-color: var(--bg) !important;
+    height: 100%;
+}
+
+ html {
+     box-sizing: border-box;
+}
+
+ body {
+     background: #212121;
+     display: block;
+}
+
+
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/*.outer-wrapper{
+      height: 100vh;  Fallback for browsers that do not support Custom Properties 
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: auto;
+}*/
+.outer-wrapper{
+    /*height: 100%;*/
+      top: 60px;
+    height: calc(100% - 60px);
+    width: 100%;
+    background: lightyellow;
+}
+
+
+
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="number"], input[type="date"], textarea {
+    border-radius: 0.625rem;
+    border: 1px solid var(--btncolor);
+    /*border: 1px solid lightgray;*/
+    padding: .375rem .75rem !important;
+    outline: none;
+}
+
+input[type="radio"],  input[type="checkbox"]{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+form label{
+    cursor: pointer;
+}
+
+.load {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #478fff;
+    border-radius: 100%;
+}
+
+/*.open {
+    border-top: 5px solid transparent;
+    animation: load-animate infinite linear 1s;
+} conflicts with mobile menu */
+
+.hide {
+display: none !important;
+/*height: 0;
+overflow: hidden;*/
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+.display-md-only{
+    display: block;
+}
+
+.display-sm-only{
+    display: none;
+}
+
+
+@keyframes load-animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        opacity: .35;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up-absolute {
+    0% {
+        opacity: 0;
+        transform: translate(-50%,20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%,0px);
+    }
+}
+
+.slideUp{
+animation: slide-up 0.4s ease;
+}
+
+
+.slideUpAbsolute{
+animation: slide-up-absolute 0.4s ease;
+}
+
+
+.progress{
+border-radius: 1rem;
+margin-bottom: 1rem;
+}
+
+.progress-bar{
+    background-color: var(--mincAccentBlue);
+}
+
+
+#main-container{
+    /*height: calc(100% - 60px);*/
+    /*height: calc(100% - var(--dockHeight));   height of dock area, dynamically updated based on dock  */
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    /*grid-template-columns: 65% 35%;*/
+    background-color: lightblue;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*margin-bottom: 20px;  height of dock area, dynamically updated based on dock  */
+    /*margin-top: 60px;  height of navbar */
+    border: 2px solid purple;
+}
+
+#main-access-area{
+    background-color: lightgoldenrodyellow;
+    border: 2px solid cornflowerblue;
+    overflow-y: auto;
+}
+
+#sidebar{
+    background-color: lightsalmon;
+    overflow-y: auto;
+}
+
+
+
+#dock-area{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: green;
+}
+
+
+
+
+.trainer-first-page, .trainer-list-page, .exercise-details-page, .add-new-exercise-page, .add-new-program-page, .program-details-page{
+display: block;
+text-align: center;
+height: inherit;
+width: 100%;
+transition: all 0.2s ease;
+overflow: auto;
+/*animation: showPage 0.4s ease;*/
+}
+
+
+.exercise-details-page, .add-new-exercise-page, .trainer-list-page{
+    height: auto;
+}
+
+
+
+/*#title-bar-container .page-title{
+transform: translateX(50%) scale(0.6);
+opacity: 0;
+}
+*/
+
+.go-back {
+    padding-left: 1.25rem;
+    position: relative;
+}
+.go-back::before,
+.go-back::after {
+    content: "";
+    display: block;
+    left: 0px;
+    position: absolute;
+    top: 50%;
+    transition: left 0.1s;
+}
+.go-back::before {
+    border-color: var(--btncolor);
+    border-style: solid;
+    border-width: 0 0 2px 2px;
+    height: 1rem;
+    width: 1rem;
+
+    transform: translate(-50%,-50%) rotate( 45deg );
+    -webkit-transform: translate(-50%,-50%) rotate( 45deg );
+    position: absolute;
+top: 50%;
+left: 50%;
+}
+/*.go-back::after {
+    background: #c16b00;
+    height: 2px;
+    width: 11px;
+}*/
+.page-title:hover .go-back::before {
+    /*left: -3px;*/
+    left: 20%;
+}
+
+
+.page-title{
+position: sticky;
+top: 0;
+height: 44px;
+width: 100%;
+text-align: left;
+display: flex;
+align-items: center;
+padding: 0rem 1rem;
+}
+
+.page-title.
+
+.back-arrow{
+height: 44px;
+width: 44px;
+padding: 10px;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.back-arrow img{
+height: 24px;
+width: auto;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.back-arrow:hover, .back-arrow:active{
+background: #eee;
+}
+
+/*.page-title h4{*/
+/*    font-size: 22px;*/
+/*    text-align: left;*/
+/*    margin: 0;*/
+/*}*/
+
+.page-title h5{
+    overflow-x: auto;
+    overflow-wrap: normal;
+word-wrap: normal;
+width: 100%;
+}
+
+.add-new-program-page.short-title .page-title h5{
+   width: 80%;
+}
+
+/*#title-bar-new-exercise-form-counter, */
+.title-bar-counter {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    margin-left: auto;
+    color: var(--fontDark);
+    margin-right: calc(1rem - 14px);
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+
+#main-container{
+    padding: 0 !important;
+}
+
+
+.display-md-only{
+    display: none !important;
+}
+
+.display-sm-only{
+    display: block !important;
+}
+
+.display-sm-only.hide{
+    display: none !important;
+}
+
+.display-sm-only.invisible{
+    visibility: hidden !important;
+}
+
+    #main-container{
+    grid-template-columns: 100%;
+}
+
+
+}
